@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    font-weight: 650;
+    font-style: normal;
+}
+
+:root {
+    --dk-violet: hsl(268,75%,9%);
+    --lt-violet: hsl(268,47%,21%);
+    --lt-violet2: hsl(281,89%,26%);
+    --vb-violet: hsl(285,91%,52%);
+    --vb-violet2: hsl(290,70%,36%);
+
+    --vb-yellow: hsl(52,100%,62%);
+    --pl-white: hsl(0,0%,100%);
+
+    --vb-cyan: hsl(176,100%,44%);
+    --vb-cyan2: hsl(177,92%,70%);
+    --dk-text: hsl(198,20%,13%);
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #FAACA8;
+    background-image: radial-gradient();
+    background-image: radial-gradient(circle, #FAACA8 0%, #ffffff 100%);
+}
+
+.container {
+    width: 90%;
+    max-width: 450px;
+}
+
+h1 {
+    font-weight: 650;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.display-container {
+    position: relative;
+    background-color: whitesmoke;
+    border-radius: 1rem;
+    border-bottom: 0.2rem solid rgb(179, 179, 179);
+    margin: 1rem 0;
+    padding-top: 0.35rem;
+}
+
+.display {
+    width: 100%;
+    background-color: transparent;
+    padding: 1.15rem 1rem;
+    color: black;
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 30px;
+    letter-spacing: 1px;
+    padding-right: 3.25rem;
+    border: none;
+    outline: none;
+}
+
+.display::placeholder {
+    position: absolute;
+    top: 50%;
+    left: 1.5rem;
+    font-size: 1.5rem;
+    line-height: 30px;
+    color: black;
+    opacity: 0.4;
+    transform: translateY(-50%);
+}
+
+.display-container button {
+    position: absolute;
+    top: 50%;
+    right: 1.5rem;
+    transform: translateY(-50%);
+}
+
+.input-container {
+    width: 100%;
+    background-color: whitesmoke;
+    border-radius: 1rem;
+    padding: 2rem;
+    border-bottom: 0.2rem solid rgb(179, 179, 179);
+}
+
+.length-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.length-container p:nth-child(1) {
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+
+.length-container p:nth-child(2) {
+    font-weight: 400;
+    font-style: italic;
+    font-size: 1.5rem;
+}
+
+.strength-container {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.75rem;
+    margin-bottom: 2rem;
+}
+
+.strength-container p {
+    font-weight: 750;
+    font-size: 1.5rem;
+}
+
+.indicator {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+}
+
+.generateButton {
+    width: 100%;
+    padding: 1rem 0;
+    text-align: center;
+    background-color: #FAACA8;
+    border-radius: 1rem;
+    border-bottom: 0.2rem solid black;
+    border-right: 0.2rem solid black;
+    font-weight: 600;
+    font-size: 1.25rem;
+    transform: all 0.1s;
+    transition: transform 0.3s;
+    text-decoration: none;
+    color: black;
+}
+
+.generateButton:hover {
+    transform: translateY(-5px);
+    background-color: black;
+    color: #FAACA8;
+}
+
+.check {
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+    gap: 0 1rem;
+    transform: all 0.1s;
+    transition: transform 0.3s;
+}
+
+.check:hover {
+    transform: translateY(-5px);
+}
+
+.check input {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+    border-radius: 0.35rem;
+    cursor: pointer;
+    position: relative;
+}
+
+.check input:checked {
+    background-color: var(--vb-cyan);
+}
+
+.check input:checked::before {
+    content: '✔️';
+    position: absolute;
+    font-size: 1.05rem;
+    font-weight: 600;
+    left: 50%;
+    top:-15px;
+    transform: translateX(-50%) translateY(40%);
+}
+
+.check label {
+    color: black;
+    font-size: 1.25rem;
+    font-weight: 400;
+    letter-spacing: 0.75px;
+}
+
+.copyBtn {
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.tooltip {
+    position: absolute;
+    background-color: whitesmoke;
+    color: black;
+    font-size: 1rem;
+    top: -40px;
+    left: -25px;
+    padding: 5px 10px;
+    border-radius: 1rem;
+    opacity: 0;
+    transform: scale(0);
+    transform-origin: bottom;
+    transform: all 250ms ease-in-out;
+}
+
+.tooltip.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.slider {
+    appearance: none;
+    width: 100%;
+    height: 0.75rem;
+    cursor: pointer;
+    background-image: linear-gradient(#FAACA8, #FAACA8);
+    background-repeat: no-repeat;
+    border: 2px solid black;
+    border-radius: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.slider::-webkit-slider-thumb {
+    appearance: none;
+    height: 1.25rem;
+    width: 1.25rem;
+    border-radius: 50%;
+    border: 3px solid black;
+    background-color: rgb(255, 0, 0);
+    cursor: pointer;
+    margin-top: -2px;
+    transform: all 0.1s;
+    transition: transform 0.3s;
+}
+
+.slider::-webkit-slider-thumb:hover {
+    outline: 2px solid rgb(255,0,0);
+    background-color: black;
+    box-shadow: 0px 0px 10px 1px rgb(255,0,0);
+}
+
+.foot {
+    margin-top: 1rem;
+    text-decoration: none;
+    color: black;
+}
